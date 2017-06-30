@@ -1,0 +1,61 @@
+<div class="container">
+<%= form_with(model: sale, local: true) do |form| %>
+  <% if sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<center><div class="brand-before"> </center>
+  <div class="field">
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :sale_title %>
+  </div>
+  <div class="field">
+    <%= form.label :description %><br>
+    <%= form.text_area :description, id: :sale_description %>
+  </div>
+   <div class="field">
+    <%= form.label :category_id %><br>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+   <div class="field">
+     <%= form.label :user_id %><br>
+     <%= form.hidden_field :user_id,value: current_user.id%>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %><br>
+    <%= form.date_select :date, id: :sale_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_map %><br>
+    <%= form.text_field :address_map, id: :sale_address_map %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %><br>
+    <%= form.text_field :latitude, id: :sale_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %><br>
+    <%= form.text_field :longitude, id: :sale_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
+</div>
+</div>
+
+

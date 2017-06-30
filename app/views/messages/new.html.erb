@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<center><p id="notice"><%= notice %></p></center>
+  <br><br>
+</head>
+ <header class="intro-header" style="background-image: url('/assets/img/course05.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Contact Me</h1>
+                        <hr class="small">
+                        <span class="subheading">Have questions? I have answers (maybe).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<body>
+<center><div class="container"></center>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+                <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+                <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+                <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+               <section id="contact" class="section green">
+                  <center><div class="container" id="contact"></center>
+                   <%= form_for @message, url: contact_path do |message_form| %>
+                  <section id="contact" class="section green">
+                 <center><div class="container"></center> 
+                  <center><h2>send us email</h2></center> 
+  
+      <div class="content">
+         <div class="blankdivider30">
+               </div>
+                <div class="row">
+
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                   <div class="span8">
+                     <div class="cform" id="contact-form">
+                      
+            
+                          <div id="errormessage"></div>
+                             <form action="" method="post" role="form" class="form contactForm">
+                   
+                              <div class="field">
+                              <%= message_form.text_field :name,class:"form-control", placeholder: "your Name", required:true %><br>
+                               <div class="validation"></div>
+                        
+                             </div>
+         
+                            <div class="field">
+                            <%= message_form.email_field :email,class:"form-control", placeholder: "Your Email", required:true%><br>
+                             <div class="validation"></div>
+                        
+                            </div>
+                         <div class="field">
+                          <%= message_form.text_area :content, class:"form-control", placeholder: "Message", required:true  %><br>
+                           <div class="validation"></div>
+                          <%= message_form.submit "Send message",  class:"b btn-primary"%>
+                        </div>
+                </div>
+                </div>
+            </div>
+                </form>
+                       
+                  
+            </div>
+          </div>
+         </div>
+      </div>
+              
+       <%end%>
+   </section>

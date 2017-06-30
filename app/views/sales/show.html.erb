@@ -1,0 +1,50 @@
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<center><div class="container"> </center>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Category:</strong>
+    <%= @sale.category.name %>
+  </p>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @sale.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sale.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sale.date %>
+</p>
+
+<p>
+  <strong>Address map:</strong>
+  <%= @sale.address_map %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @sale.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @sale.longitude %>
+</p>
+<br><br>
+<center><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@sale.latitude}%2C#{@sale.longitude}" %></center> 
+
+
+<%= render "assets" %>
+<%= link_to 'Edit', edit_sale_path(@sale), class: "btn btn-info" %> 
+<%= link_to 'Back', sales_path, class: "btn btn-primary" %>
+<%= link_to 'New Sale', new_sale_path, class: "btn btn-success" %>
+</div>
+</div>
